@@ -64,6 +64,25 @@ body::after {
   letter-spacing: 0.025em;
 }
 .rom-copy p { margin: 0; }
+.source-link {
+  position: absolute;
+  left: 5%;
+  bottom: 4%;
+  padding: 8px;
+  color: var(--peach);
+  font: 12px "Topaz", "Topaz-8", monospace;
+  text-decoration: none;
+  opacity: 0.7;
+}
+.source-link:hover, .source-link:focus-visible {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.source-link:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
+}
 .status {
   position: absolute;
   right: 5%;
