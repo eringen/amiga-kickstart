@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#451641" />
+    <title>Amiga ROM</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="boot-screen" aria-label="Amiga ROM boot screen">
+      <canvas id="scene" width="640" height="496" aria-hidden="true"></canvas>
+      <svg class="rainbow-mark" viewBox="0 0 640 496" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="rainbow-rise" gradientUnits="userSpaceOnUse" x1="0" y1="65" x2="0" y2="215">
+            <stop offset="0" stop-color="#ff1600" />
+            <stop offset="0.3" stop-color="#ff9800" />
+            <stop offset="0.55" stop-color="#ffff00" />
+            <stop offset="0.8" stop-color="#80ff00" />
+            <stop offset="1" stop-color="#00ee28" />
+          </linearGradient>
+          <linearGradient id="rainbow-fall" gradientUnits="userSpaceOnUse" x1="0" y1="165" x2="0" y2="215">
+            <stop offset="0" stop-color="#145cff" />
+            <stop offset="0.5" stop-color="#00d9ff" />
+            <stop offset="1" stop-color="#00ee28" />
+          </linearGradient>
+          <path id="check-silhouette" d="M82 165H102L122 198L202 65H222L134 215H112Z" />
+        </defs>
+        <g transform="translate(26 64) scale(.91)">
+          <g fill="#ab9274" transform="translate(1 0)">
+            <use href="#check-silhouette" />
+            <use href="#check-silhouette" x="24" />
+          </g>
+          <g fill="url(#rainbow-fall)">
+            <path d="M82 165H102L134 215H112Z" />
+            <path d="M106 165H126L158 215H136Z" />
+          </g>
+          <g fill="url(#rainbow-rise)">
+            <path d="M112 215H134L222 65H202Z" />
+            <path d="M136 215H158L246 65H226Z" />
+          </g>
+        </g>
+      </svg>
+
+      <section class="rom-copy" aria-label="ROM information">
+        <p>3.00 ROM 39.106</p>
+        <p>Copyright © 1985-1992</p>
+        <p>Commodore-Amiga, Inc.</p>
+        <p>All Rights Reserved.</p>
+      </section>
+
+      <button class="status" type="button" aria-label="Replay startup animation">
+        <span>REPLAY</span>
+      </button>
+    </main>
+
+    <script src="./vendor/zdog.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
